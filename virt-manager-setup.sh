@@ -7,11 +7,15 @@ network_config_file=/etc/libvirt/qemu/networks/default.xml
 user=$USER
 
 # Install required packages
-# 
-#TODO add a brief explanation regarding each one of these packets
+# virt-manager: The actual VM manager
+# qemu-full: QEMU full setup, with all dependencies and GUI
+# dnsmasq: For DNS and DHCP support
+# bridge-utils: Utilities for configuring the Linux ethernet bridge
+# edk2-ovmf: UEFI firmware for running VMs
+# swtpm: To emulate TPM module (required for running Win 11 VMs)
 sudo pacman -S virt-manager qemu-full dnsmasq bridge-utils edk2-ovmf swtpm
 
-# add current user to the libvirt and libvirt-qemu groups
+# Add current user to the libvirt and libvirt-qemu groups
 # if other users will operate the virt-manager, add those with UIDs above 1000 to these groups
 sudo usermod -a -G libvirt $user
 sudo usermod -a -G libvirt-qemu $user
