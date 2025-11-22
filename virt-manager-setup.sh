@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# A script to quickly configure virt-manager on Arch-based distros
+# As it's based on someone else's work, please, refer to the credits on the README
+
 network_config_file=/etc/libvirt/qemu/networks/default.xml
 user=$USER
 
